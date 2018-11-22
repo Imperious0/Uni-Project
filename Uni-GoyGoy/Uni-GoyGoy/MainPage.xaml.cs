@@ -40,7 +40,7 @@ namespace Uni_GoyGoy
             {
                 Console.WriteLine("i1: " + i + "\n");
                 rl_btns.Children.Add(btns[i],
-                Constraint.RelativeToParent((x) => { return x.Width - ((i+1) * btns[i].Width) - (i * button_pad); }),
+               /* Index Out Of Bound!*/ Constraint.RelativeToParent((x) => { return x.Width - ((i+1) * btns[i].Width) - (i * button_pad); }),
                 Constraint.RelativeToParent((x) => { return 0; }));
                 Console.WriteLine("i2: " + i +"\n");
             }
