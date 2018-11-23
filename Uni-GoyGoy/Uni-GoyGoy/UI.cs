@@ -43,6 +43,13 @@ namespace Uni_GoyGoy
 
         private void rlUI_Init()
         {
+            /* rl_ui[0] = Login UI - 
+             * rl_ui[1] = ring UI - 
+             * rl_ui[2] = hastags UI - 
+             * rl_ui[3] = studyexams UI - 
+             * rl_ui[4] = hastags UI - 
+             * rl_ui[5] = studyexams UI*/
+
             rl_ui = new RelativeLayout[6];
             for (int i = 0; i < rl_ui.GetLength(0); i++)
                 rl_ui[i] = new RelativeLayout();
