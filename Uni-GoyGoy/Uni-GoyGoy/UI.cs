@@ -15,8 +15,9 @@ namespace Uni_GoyGoy
 
         Button[] btns;
 
-        int button_pad = 10;
-        int buttons_height = 100;
+        int button_padleft = 10;
+        int button_padbot = 10;
+        int buttons_height = 80;
         int buttons_width;
 
         public UI()
@@ -68,7 +69,7 @@ namespace Uni_GoyGoy
         private void btns_Init()
         {
 
-            buttons_width = ((int)Ekran.Android_Width - (button_pad * (btns.GetLength(0) + 1))) / btns.GetLength(0);
+            buttons_width = ((int)Ekran.Android_Width - (button_padleft * (btns.GetLength(0) + 1))) / btns.GetLength(0);
 
             Console.WriteLine("width: " + buttons_width);
 
@@ -76,7 +77,8 @@ namespace Uni_GoyGoy
             {
                 btns[i] = new Button
                 {
-                    Text = "Holy Fuck İt Works! " + i,
+                    Text = "Holy Fuck! İt Works! " + i,
+                    FontSize = 13,
                     BackgroundColor = Color.Green,
                     TextColor = Color.Goldenrod,
                     WidthRequest = buttons_width,
@@ -89,10 +91,12 @@ namespace Uni_GoyGoy
             for (int i = 0; i < btns.GetLength(0); i++)
             {
                 int c = buttons_width * i;
-                int v = (i+1) * button_pad;
+                int v = (i+1) * button_padleft;
+                int k = buttons_height + button_padbot;
+
                 rl_btns.Children.Add(btns[i],
                 Constraint.RelativeToParent((x) => { return c + v; }),
-                Constraint.RelativeToParent((x) => { return 0; }));
+                Constraint.RelativeToParent((x) => { return x.Height - k ; }));
             }
 
         }
